@@ -1,6 +1,6 @@
-﻿$ServiceName = 'wlidsvc'
+$ServiceName = 'wlidsvc'
 
-foreach($targetHost in Get-Content 'C:\Users\dwild8\OneDrive - DXC Production\Documents\Powershell\Challenges\1\server01.txt'){
+foreach($targetHost in Get-Content "$PSScriptRoot\server01.txt"){
 
     $Service = Get-Service -ComputerName $targetHost | Where-Object {$_.Name -eq $ServiceName}
 
@@ -14,6 +14,3 @@ foreach($targetHost in Get-Content 'C:\Users\dwild8\OneDrive - DXC Production\Do
     echo $Service
 
 }
-
-
-#Get-Service -ComputerName 0.0.0.0
